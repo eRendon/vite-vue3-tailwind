@@ -1,0 +1,121 @@
+<transition
+        enter-active-class="ease-out duration-300"
+        enter-to-class="opacity-100"
+        enter-from-class="opacity-0"
+        leave-active-class="ease-in duration-200"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0">
+    <div v-if="showModal" class="fixed z-10 inset-0 overflow-y-auto">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!--
+              Background overlay, show/hide based on modal state.
+
+              Entering: "ease-out duration-300"
+                From: "opacity-0"
+                To: "opacity-100"
+              Leaving: "ease-in duration-200"
+                From: "opacity-100"
+                To: "opacity-0"
+            -->
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <!-- This element is to trick the browser into centering the modal contents. -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <!--
+              Modal panel, show/hide based on modal state.
+
+              Entering: "ease-out duration-300"
+                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                To: "opacity-100 translate-y-0 sm:scale-100"
+              Leaving: "ease-in duration-200"
+                From: "opacity-100 translate-y-0 sm:scale-100"
+                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            -->
+            <div
+                    class="inline-block align-bottom bg-white rounded-lg text-left  shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="modal-headline">
+                <div class="product relative">
+                    <div @click="$emit('closeModal')" class="absolute cursor-pointer w-5 z-10 top-3 h-5 right-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                    <div class="product__photo">
+                        <div class="photo-container">
+                            <div class="photo-main">
+                                <div class="controls">
+                                    <i class="material-icons">share</i>
+                                    <i class="material-icons">favorite_border</i>
+                                </div>
+                                <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png"
+                                     alt="green apple slice">
+                            </div>
+                            <div class="photo-album">
+                                <ul>
+                                    <li><img
+                                            src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
+                                            alt="green apple"></li>
+                                    <li><img
+                                            src="https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png"
+                                            alt="half apple"></li>
+                                    <li><img
+                                            src="https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png"
+                                            alt="green apple"></li>
+                                    <li><img
+                                            src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png"
+                                            alt="apple top"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <div class="title">
+                            <h1>{{ item.name }}</h1>
+                            <span>COD: 45999</span>
+                        </div>
+                        <div class="price">
+                            $ <span>{{ item.price }}</span>
+                        </div>
+                        <div class="variant">
+                            <h3>SELECT A COLOR</h3>
+                            <ul>
+                                <li><img
+                                        src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
+                                        alt="green apple"></li>
+                                <li><img
+                                        src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png"
+                                        alt="yellow apple"></li>
+                                <li><img
+                                        src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png"
+                                        alt="orange apple"></li>
+                                <li><img
+                                        src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png"
+                                        alt="red apple"></li>
+                            </ul>
+                        </div>
+                        <div class="description">
+                            <h3>BENEFITS</h3>
+                            <ul>
+                                <li>Apples are nutricious</li>
+                                <li>Apples may be good for weight loss</li>
+                                <li>Apples may be good for bone health</li>
+                                <li>They're linked to a lowest risk of diabetes</li>
+                            </ul>
+                        </div>
+                        <button @click="addBag" class="buy--btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <footer>
+                    <p>Design from <a href="https://dribbble.com/shots/5216438-Daily-UI-012">dribbble shot</a> of <a
+                            href="https://dribbble.com/rodrigorramos">Rodrigo Ramos</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+</transition>

@@ -1,0 +1,12 @@
+<div class="grid grid-flow-col">
+    <div class="row-span-3 bg-gray-50">
+        <main-sidebar></main-sidebar>
+    </div>
+    <div class="col-span-3">
+        <header-navbar></header-navbar>
+    </div>
+    <div class="row-span-2 col-span-3">
+        <skeleton v-if="loading"></skeleton>
+        <router-view v-if="!loading"></router-view>
+    </div>
+</div>
