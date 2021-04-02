@@ -21,6 +21,8 @@ export default defineComponent({
     return {
       dropdownPopoverShow,
       toggleDropdown,
+      btnDropdownRef,
+      popoverDropdownRef,
     };
   },
 });

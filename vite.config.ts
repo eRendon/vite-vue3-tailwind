@@ -4,6 +4,9 @@ import * as path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    'process.env': {}
+  },
   plugins: [vue()],
   resolve: {
     alias: [
@@ -42,6 +45,10 @@ export default defineConfig({
       {
         find: '@/server',
         replacement: path.resolve(__dirname, './src/server')
+      },
+      {
+        find: '@/',
+        replacement: path.resolve(__dirname, './src')
       }
     ]
   },

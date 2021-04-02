@@ -128,7 +128,7 @@
                         </div>
                         <div class="w-32 flex justify-between">
                             <span v-if="item.quantity > 1" class="px-3 py-1 rounded-md bg-gray-300 cursor-pointer"  @click="addItem('-', item)">-</span>
-                            <span v-else class="px-3 py-1 rounded-md bg-red-300 text-white cursor-pointer">x</span>
+                            <span v-else class="px-3 py-1 rounded-md bg-red-300 text-white cursor-pointer" @click="deleteItem(index)">x</span>
                             <span class="font-semibold mx-4">{{ item.quantity }}</span>
                             <span class="px-3 py-1 rounded-md bg-gray-300 cursor-pointer" @click="addItem('+', item)">+</span>
                         </div>
@@ -136,21 +136,21 @@
                             ${{ item.quantity * item.price }}
                         </div>
                     </div>
-                    <div class="flex flex-row justify-between items-center mb-4">
-                        <div class="flex flex-row items-center w-2/5">
-                            <img src="https://source.unsplash.com/4u_nRgiLW3M/600x600" class="w-10 h-10 object-cover rounded-md"
-                                 alt="">
-                            <span class="ml-4 font-semibold text-sm">Ranch Burger</span>
-                        </div>
-                        <div class="w-32 flex justify-between">
-                            <span class="px-3 py-1 rounded-md bg-red-300 text-white">x</span>
-                            <span class="font-semibold mx-4">1</span>
-                            <span class="px-3 py-1 rounded-md bg-gray-300 ">+</span>
-                        </div>
-                        <div class="font-semibold text-lg w-16 text-center">
-                            $2.50
-                        </div>
-                    </div>
+<!--                    <div class="flex flex-row justify-between items-center mb-4">-->
+<!--                        <div class="flex flex-row items-center w-2/5">-->
+<!--                            <img src="https://source.unsplash.com/4u_nRgiLW3M/600x600" class="w-10 h-10 object-cover rounded-md"-->
+<!--                                 alt="">-->
+<!--                            <span class="ml-4 font-semibold text-sm">Ranch Burger</span>-->
+<!--                        </div>-->
+<!--                        <div class="w-32 flex justify-between">-->
+<!--                            <span class="px-3 py-1 rounded-md bg-red-300 text-white">x</span>-->
+<!--                            <span class="font-semibold mx-4">1</span>-->
+<!--                            <span class="px-3 py-1 rounded-md bg-gray-300 ">+</span>-->
+<!--                        </div>-->
+<!--                        <div class="font-semibold text-lg w-16 text-center">-->
+<!--                            $2.50-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <!-- end order list -->
                 <!-- totalItems -->

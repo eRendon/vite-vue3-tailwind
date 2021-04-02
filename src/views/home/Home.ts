@@ -13,6 +13,9 @@ export default defineComponent({
       return products.getters.getBag();
     });
     const total = computed(() => bag.value.reduce((a, b) => a + b.price!, 0));
+    const deleteItem = (index: number): void => {
+      bag.value.splice(index, 1);
+    }
     const searchItem = async (): Promise<void> => {
       item.value = await products.actions.searchItem(id.value);
       console.log('buscar', item.value);
@@ -51,6 +54,7 @@ export default defineComponent({
       onCloseModal,
       total,
       addItem,
+      deleteItem,
     };
   },
 });

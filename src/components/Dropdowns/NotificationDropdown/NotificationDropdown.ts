@@ -12,6 +12,7 @@ export default defineComponent({
       if (dropdownPopoverShow.value) {
         dropdownPopoverShow.value = false;
       } else {
+        console.log(btnDropdownRef.value)
         dropdownPopoverShow.value = true;
         createPopper<StrictModifiers>(btnDropdownRef.value, popoverDropdownRef.value, {
           placement: 'bottom-start',
@@ -21,6 +22,8 @@ export default defineComponent({
     return {
       dropdownPopoverShow,
       toggleDropdown,
+      btnDropdownRef,
+      popoverDropdownRef,
     };
   },
 });

@@ -18,6 +18,8 @@ import Skeleton from '@/components/shared/SkeletonLoading/Skeleton.vue';
 import DetailItem from '@/components/shared/Modals/DetailItem/DetailItem.vue';
 import Toast from '@/components/shared/Toast/Toast.vue';
 
+import './registerServiceWorker';
+
 const app = createApp(App).use(router)
 
 /* components */

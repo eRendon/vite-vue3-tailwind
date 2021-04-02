@@ -4,9 +4,8 @@ export default defineComponent({
     name: 'MapExample',
     mounted() {
         const { google } = window;
-        let map: google.maps.Map, infoWindow: google.maps.InfoWindow;
-        map = document.getElementById('map-canvas');
-        infoWindow = new google.maps.InfoWindow();
+        let map = document.getElementById('map-canvas');
+        let infoWindow = new google.maps.InfoWindow();
         const lat = map!.getAttribute('data-lat');
         const lng = map!.getAttribute('data-lng');
         const myLatlng = new google.maps.LatLng(lat, lng);
@@ -19,42 +18,42 @@ export default defineComponent({
                 {
                     featureType: 'administrative',
                     elementType: 'labels.text.fill',
-                    stylers: [{ color: '#444444' }],
+                    stylers: [{color: '#444444'}],
                 },
                 {
                     featureType: 'landscape',
                     elementType: 'all',
-                    stylers: [{ color: '#f2f2f2' }],
+                    stylers: [{color: '#f2f2f2'}],
                 },
                 {
                     featureType: 'poi',
                     elementType: 'all',
-                    stylers: [{ visibility: 'off' }],
+                    stylers: [{visibility: 'off'}],
                 },
                 {
                     featureType: 'road',
                     elementType: 'all',
-                    stylers: [{ saturation: -100 }, { lightness: 45 }],
+                    stylers: [{saturation: -100}, {lightness: 45}],
                 },
                 {
                     featureType: 'road.highway',
                     elementType: 'all',
-                    stylers: [{ visibility: 'simplified' }],
+                    stylers: [{visibility: 'simplified'}],
                 },
                 {
                     featureType: 'road.arterial',
                     elementType: 'labels.icon',
-                    stylers: [{ visibility: 'off' }],
+                    stylers: [{visibility: 'off'}],
                 },
                 {
                     featureType: 'transit',
                     elementType: 'all',
-                    stylers: [{ visibility: 'off' }],
+                    stylers: [{visibility: 'off'}],
                 },
                 {
                     featureType: 'water',
                     elementType: 'all',
-                    stylers: [{ color: '#5e72e4' }, { visibility: 'on' }],
+                    stylers: [{color: '#5e72e4'}, {visibility: 'on'}],
                 },
             ],
         };
@@ -106,6 +105,7 @@ export default defineComponent({
                 handleLocationError(false, infoWindow, map.getCenter())
             }
         });
+
         function handleLocationError(
             browserHasGeolocation: boolean,
             infoWindow: google.maps.InfoWindow,
