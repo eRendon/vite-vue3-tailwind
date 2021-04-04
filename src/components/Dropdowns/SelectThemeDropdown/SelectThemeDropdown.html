@@ -1,0 +1,40 @@
+<div>
+    <div>
+        <a
+                class="text-blueGray-500 block"
+                href="#pablo"
+                ref="btnDropdownRef"
+                v-on:click="toggleDropdown($event)"
+        >
+            <div class="items-center flex">
+                <div class="text-white cursor-pointer capitalize">
+                    {{ selectedTheme }}
+                </div>
+            </div>
+        </a>
+        <div
+                ref="popoverDropdownRef"
+                class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                v-bind:class="{
+        hidden: !dropdownPopoverShow,
+        block: dropdownPopoverShow,
+      }"
+        >
+            <a
+                    @click="changeStateTheme('light')"
+                    href="javascript:void(0);"
+                    class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            >
+                Light
+            </a>
+            <a
+                    @click="changeStateTheme('dark')"
+                    href="javascript:void(0);"
+                    class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            >
+                Black
+            </a>
+
+        </div>
+    </div>
+</div>

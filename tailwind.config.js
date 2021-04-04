@@ -3,6 +3,7 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     colors: {
       black: '#000',
@@ -344,9 +345,12 @@ module.exports = {
     "active",
     "visited",
     "disabled",
+    "dark",
+    "dark-hover",
   ],
   plugins: [
     require("@tailwindcss/forms"),
+    require('tailwindcss-dark-mode')(),
     plugin(function ({ addComponents, theme }) {
       const screens = theme("screens", {});
       addComponents([
