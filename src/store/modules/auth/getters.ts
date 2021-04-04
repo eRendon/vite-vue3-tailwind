@@ -1,7 +1,7 @@
 import state from './state';
 
 const getters = {
-  getLoading: ():boolean => state.loading,
+  getToastState: (): boolean => state.isLogged,
 };
 
 export default getters;

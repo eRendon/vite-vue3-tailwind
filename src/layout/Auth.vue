@@ -1,5 +1,6 @@
 <template>
   <div>
+    <spinner-loading></spinner-loading>
     <navbar />
     <main>
       <section class="relative w-full h-full py-40 min-h-screen">

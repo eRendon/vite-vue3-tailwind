@@ -1,10 +1,9 @@
-import { ref } from 'vue';
+import github from '@/assets/img/github.svg';
+import google from '@/assets/img/google.svg';
 
 export default {
   setup() {
-    const github = ref<string>('@/assets/img/github.svg');
-    const google = ref<string>('@/assets/img/google.svg');
-
+    
     return {
       github,
       google,
