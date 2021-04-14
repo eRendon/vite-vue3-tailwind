@@ -1,7 +1,7 @@
 import state from './state';
 
 const getters = {
-  getLoading: ():boolean => state.loading,
+  getLoading: () => state,
 };
 
 export default getters;

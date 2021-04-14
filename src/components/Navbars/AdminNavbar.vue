@@ -31,9 +31,6 @@
         </div>
       </form>
       <!-- User -->
-      <ul  class="flex-col md:flex-row list-none items-center hidden md:flex mr-2">
-        <select-theme-dropdown></select-theme-dropdown>
-      </ul>
       <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
         <user-dropdown />
       </ul>
@@ -44,12 +41,10 @@
 
 <script>
 import UserDropdown from '@/components/Dropdowns/UserDropdown/UserDropdown.vue';
-import SelectThemeDropdown from "../Dropdowns/SelectThemeDropdown/SelectThemeDropdown.vue";
 
 export default {
   components: {
     UserDropdown,
-    SelectThemeDropdown
   },
 };
 </script>

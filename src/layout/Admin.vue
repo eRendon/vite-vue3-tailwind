@@ -1,6 +1,7 @@
 <template>
   <div>
     <spinner-loading></spinner-loading>
+    <toast></toast>
     <sidebar />
     <div class="relative md:ml-64 bg-blueGray-100">
       <admin-navbar />

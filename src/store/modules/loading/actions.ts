@@ -1,10 +1,12 @@
 import state from './state';
 
 export default {
-  loadingStart(): void {
+  start(message: string): void {
     state.loading = true;
+    state.message = message
   },
-  finishLoading(): void {
+  finish(): void {
     state.loading = false;
+    state.message = ''
   },
 };

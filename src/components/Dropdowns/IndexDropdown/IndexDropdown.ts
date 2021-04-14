@@ -7,6 +7,7 @@ export default defineComponent({
     const dropdownPopoverShow = ref<boolean>(false);
     const btnDropdownRef = ref<any>(null);
     const popoverDropdownRef = ref<any>(null);
+
     const toggleDropdown = (event: Event) => {
       event.preventDefault();
       if (dropdownPopoverShow.value) {

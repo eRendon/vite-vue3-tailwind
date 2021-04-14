@@ -1,4 +1,4 @@
-import { Toast } from '@/interface/Toast';
+import { Toast } from '../../../interface/Toast';
 import mutations from './mutations';
 
 export default {

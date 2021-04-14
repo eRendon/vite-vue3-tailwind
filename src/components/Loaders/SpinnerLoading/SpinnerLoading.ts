@@ -5,10 +5,10 @@ export default defineComponent({
     name: 'SpinnerLoading',
     setup() {
 
-        const isLoading = computed<boolean>( () => loadingStore.getters.getLoading());
+        const storageLoading = computed( () => loadingStore.getters.getLoading());
 
         return {
-            isLoading,
+            storageLoading,
         }
     }
 })
