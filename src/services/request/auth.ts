@@ -1,29 +1,17 @@
-import { apiClient } from '../axios/config';
-import { AxiosError, AxiosResponse } from 'axios'
-import loading from '../../store/modules/loading';
 import { LogIn, Register } from '../../interface/Auth';
-import { axiosService } from "../index";
-import { SurePromise } from "../../interface/SurePromise";
+import { AxiosService } from '../index';
+import { SurePromise } from '../../interface/SurePromise';
+import { Profile } from '../../interface/Profile';
 
 export default class Auth {
 
-    public static async logIn(userForm: LogIn): Promise<SurePromise<AxiosResponse>> {
+    public static async logIn(userForm: LogIn): Promise<SurePromise<Profile>> {
+        const axiosService = new AxiosService<Profile, LogIn>()
         return await axiosService.postData(userForm, '/accounts/authenticate')
     }
 
-    static async register(registerForm: Register): Promise<AxiosResponse> {
-        await loading.actions.start('Cargando...')
-        try {
-            const { data } = await apiClient.post<AxiosResponse>('/accounts/register', registerForm);
-            return data
-        } catch (err) {
-            if (err && err.response) {
-                const axiosError = err as AxiosError
-                return axiosError.response?.data
-            }
-            throw err
-        } finally {
-            await loading.actions.finish()
-        }
+    static async register(registerForm: Register): Promise<SurePromise<LogIn>> {
+        const axiosService = new AxiosService<LogIn, Register>()
+        return await axiosService.postData(registerForm,'/accounts/register')
     }
 }

@@ -1,7 +1,6 @@
 import { computed, defineComponent, ref } from 'vue';
-import { notifications, products } from '@/store';
-import { Item } from '@/server/models/Item';
-// import { Toast } from '@/interface/Toast';
+import { notifications, products } from '../../store';
+import { Item } from '../../server/models/Item';
 
 export default defineComponent({
   setup() {

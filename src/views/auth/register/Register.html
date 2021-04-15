@@ -15,36 +15,52 @@
                                 class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                                 type="button"
                         >
-                            <img alt="..." class="w-5 mr-1" :src="github" />
+                            <img alt="..." class="w-5 mr-1" :src="github"/>
                             Github
                         </button>
                         <button
                                 class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                                 type="button"
                         >
-                            <img alt="..." class="w-5 mr-1" :src="google" />
+                            <img alt="..." class="w-5 mr-1" :src="google"/>
                             Google
                         </button>
                     </div>
-                    <hr class="mt-6 border-b-1 border-blueGray-300" />
+                    <hr class="mt-6 border-b-1 border-blueGray-300"/>
                 </div>
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
                     <div class="text-blueGray-400 text-center mb-3 font-bold">
                         <small>Or sign up with credentials</small>
                     </div>
-                    <form>
+                    <Form @submit="register" class="grid grid-cols-2 gap-3" :validation-schema="schema"
+                          v-slot="{ errors }">
                         <div class="relative w-full mb-3">
                             <label
                                     class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                     htmlFor="grid-password"
                             >
-                                Name
+                                First Name
                             </label>
-                            <input
-                                    type="email"
-                                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                    placeholder="Name"
-                            />
+                            <Field name="firstName"
+                                   type="string"
+                                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                   placeholder="First Name"
+                            ></Field>
+                            <ErrorMessage name="firstName"></ErrorMessage>
+                        </div>
+                        <div class="relative w-full mb-3">
+                            <label
+                                    class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                    htmlFor="grid-password"
+                            >
+                                Last Name
+                            </label>
+                            <Field name="lastName"
+                                   type="string"
+                                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                   placeholder="Last Name"
+                            ></Field>
+                            <ErrorMessage name="lastName"></ErrorMessage>
                         </div>
 
                         <div class="relative w-full mb-3">
@@ -54,11 +70,27 @@
                             >
                                 Email
                             </label>
-                            <input
-                                    type="email"
-                                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                    placeholder="Email"
-                            />
+                            <Field name="email"
+                                   type="email"
+                                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                   placeholder="Email"
+                            ></Field>
+                            <ErrorMessage name="email"></ErrorMessage>
+                        </div>
+
+                        <div class="relative w-full mb-3">
+                            <label
+                                    class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                    htmlFor="grid-password"
+                            >
+                                Title
+                            </label>
+                            <Field name="title"
+                                   type="text"
+                                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                   placeholder="Title"
+                            ></Field>
+                            <ErrorMessage name="title"></ErrorMessage>
                         </div>
 
                         <div class="relative w-full mb-3">
@@ -68,38 +100,59 @@
                             >
                                 Password
                             </label>
-                            <input
-                                    type="password"
-                                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                    placeholder="Password"
-                            />
+                            <Field name="password"
+                                   type="password"
+                                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                   placeholder="Password"
+                            ></Field>
+                            <ErrorMessage name="password"></ErrorMessage>
+                        </div>
+
+                        <div class="relative w-full mb-3">
+                            <label
+                                    class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                    htmlFor="grid-password"
+                            >
+                                Confirm Password
+                            </label>
+                            <Field name="confirmPassword"
+                                   type="password"
+                                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                   placeholder="Confirm Password"
+                            ></Field>
+                            <ErrorMessage name="confirmPassword"></ErrorMessage>
                         </div>
 
                         <div>
                             <label class="inline-flex items-center cursor-pointer">
-                                <input
-                                        id="customCheckLogin"
-                                        type="checkbox"
-                                        class="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
-                                />
+                                <Field :value="true"
+                                       name="acceptTerms"
+                                       id="acceptTerms"
+                                       type="checkbox"
+                                       class="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150">
+                                </Field>
+
                                 <span class="ml-2 text-sm font-semibold text-blueGray-600">
-                    I agree with the
-                    <a href="javascript:void(0)" class="text-emerald-500">
-                      Privacy Policy
-                    </a>
-                  </span>
+                                    I agree with the
+                                    <a href="javascript:void(0)" class="text-emerald-500">
+                                      Privacy Policy
+                                  </a>
+                                </span>
                             </label>
+                            <div>
+                                <ErrorMessage name="acceptTerms"></ErrorMessage>
+                            </div>
                         </div>
 
                         <div class="text-center mt-6">
                             <button
                                     class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                                    type="button"
+                                    type="submit"
                             >
                                 Create Account
                             </button>
                         </div>
-                    </form>
+                    </Form>
                 </div>
             </div>
         </div>

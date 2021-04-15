@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import { Toast } from '@/interface/Toast';
+import { Toast } from '../../../interface/Toast';
 
 interface StorageNotifications {
   toast: Toast;

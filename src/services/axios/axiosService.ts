@@ -1,14 +1,13 @@
 import loading from '../../store/modules/loading';
 import { apiClient } from './config';
-import {AxiosError, AxiosResponse} from 'axios';
+import { AxiosError, AxiosResponse } from 'axios';
 import surePromise from '../../utils/surePromise';
 import { Toast } from '../../interface/Toast';
 import { notifications } from '../../store';
 import { SurePromise } from "../../interface/SurePromise";
 
 export default class AxiosService<T, P> {
-
-   static async postData(postData: P, url: string): Promise<SurePromise<AxiosResponse<T>>> {
+    async postData(postData: P, url: string): Promise<SurePromise<T>> {
         await loading.actions.start('Cargando...')
         try {
             return await surePromise(apiClient.post<AxiosResponse>(url, postData));
@@ -22,11 +21,11 @@ export default class AxiosService<T, P> {
                     show: true
                 }
                 await notifications.actions.presentToast(toast)
-                // return axiosError.response?.data
             }
             throw err
         } finally {
             await loading.actions.finish()
         }
     }
+
 }

@@ -73,10 +73,12 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '/auth/login',
+        name: 'login',
         component: Login,
       },
       {
         path: '/auth/register',
+        name: 'register',
         component: Register,
       },
     ],
