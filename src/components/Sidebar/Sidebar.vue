@@ -196,6 +196,26 @@
               </a>
             </router-link>
           </li>
+          <li class="inline-flex">
+            <router-link to="/admin/sliders" v-slot="{ href, navigate, isActive }">
+              <a
+                  :href="href"
+                  @click="navigate"
+                  class="text-xs uppercase py-3 font-bold block"
+                  :class="[
+                  isActive
+                    ? 'text-emerald-500 hover:text-emerald-600'
+                    : 'text-blueGray-700 dark:text-white hover:text-blueGray-500',
+                ]"
+              >
+                <i
+                    class="fas fa-sliders-h mr-2 text-sm"
+                    :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"
+                ></i>
+                Sliders
+              </a>
+            </router-link>
+          </li>
         </ul>
 
         <!-- Divider -->

@@ -22,6 +22,7 @@ import Index from '@/views/Index.vue';
 import Auth from '../layout/Auth.vue';
 import Admin from '../layout/Admin.vue';
 import Home from '../views/home/Home.vue';
+import Sliders from "../views/admin/sliders/Sliders.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -63,6 +64,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/admin/pos',
         name: 'pos',
         component: Home,
+      },
+      {
+        path: '/admin/sliders',
+        name: 'sliders',
+        component: Sliders
       },
     ],
   },
