@@ -13,13 +13,12 @@
     "@tailwindcss/forms": "0.3.1",
     "@vee-validate/i18n": "^4.1.20",
     "@vee-validate/rules": "^4.1.20",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "chart.js": "^2.9.4",
     "firebase": "^8.3.2-2021230222248",
     "register-service-worker": "^1.7.1",
     "vee-validate": "^4.3.0",
     "vue": "^3.0.5",
-    "vue-authenticate": "^1.5.0",
     "vue-axios": "3.2.4",
     "vue-router": "^4.0.0-0",
     "vuefire": "^3.0.0-alpha.2"
@@ -37,7 +36,7 @@
     "tailwindcss": "^2.0.4",
     "tailwindcss-dark-mode": "^1.1.7",
     "typescript": "^4.1.3",
-    "vite": "^2.1.5",
+    "vite": "^2.2.1",
     "vue-tsc": "^0.0.15"
   }
 }
