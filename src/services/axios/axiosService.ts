@@ -6,9 +6,10 @@ import { Toast } from '../../interface/Toast';
 import { notifications } from '../../store';
 import { SurePromise } from "../../interface/SurePromise";
 
-export default class AxiosService<T, P> {
-    async postData(postData: P, url: string): Promise<SurePromise<T>> {
-        await loading.actions.start('Cargando...')
+export class AxiosService<T, U> {
+    
+    async postData(postData: U, url: string): Promise<SurePromise<T>> {
+        loading.actions.start('Cargando...')
         try {
             return await surePromise(apiClient.post<AxiosResponse>(url, postData));
         } catch (err) {
@@ -20,12 +21,14 @@ export default class AxiosService<T, P> {
                     type: 'error',
                     show: true
                 }
-                await notifications.actions.presentToast(toast)
+                notifications.actions.presentToast(toast)
             }
             throw err
         } finally {
-            await loading.actions.finish()
+            loading.actions.finish()
         }
     }
 
 }
+
+export const axiosSingleton = new AxiosService()

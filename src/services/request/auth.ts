@@ -1,17 +1,23 @@
 import { LogIn, Register } from '../../interface/Auth';
-import { AxiosService } from '../index';
+import { axiosSingleton }  from '../index';
 import { SurePromise } from '../../interface/SurePromise';
 import { Profile } from '../../interface/Profile';
+import { AxiosService } from '../axios/axiosService';
 
 export default class Auth {
 
-    public static async logIn(userForm: LogIn): Promise<SurePromise<Profile>> {
-        const axiosService = new AxiosService<Profile, LogIn>()
-        return await axiosService.postData(userForm, '/accounts/authenticate')
+    private axiosService: AxiosService<Profile & LogIn, LogIn> = axiosSingleton
+
+    //private axiosService = new AxiosService<Profile & Register, LogIn>()
+
+    public async logIn(userForm: LogIn): Promise<SurePromise<Profile>> {
+         //axiosService<Profile, LogIn>()
+        //return await axiosService<Profile, LogIn>.instance.postData()(userForm, '/accounts/authenticate')
+        return await this.axiosService.postData(userForm, '/accounts/authenticate')
     }
 
-    static async register(registerForm: Register): Promise<SurePromise<LogIn>> {
-        const axiosService = new AxiosService<LogIn, Register>()
-        return await axiosService.postData(registerForm,'/accounts/register')
+    public async register(registerForm: Register): Promise<SurePromise<LogIn>> {
+        //const axiosService = axiosService<LogIn, Register>()
+        return await this.axiosService.postData(registerForm,'/accounts/register')
     }
 }

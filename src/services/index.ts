@@ -1,7 +1,7 @@
 import AuthService from './request/auth'
-import AxiosService from './axios/axiosService'
+import { axiosSingleton } from './axios/axiosService'
 
 export {
     AuthService,
-    AxiosService
+    axiosSingleton
 }
