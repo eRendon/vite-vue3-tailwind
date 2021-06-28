@@ -1,13 +1,15 @@
 import mutations from './mutations';
 import router from '../../../router';
-import {loadingStore, notifications} from '../../index';
+import { loadingStore, notifications } from '../../index';
 import {AuthService} from '../../../services';
 import {LogIn, Register} from '../../../interface/Auth';
 import {Toast} from "../../../interface/Toast";
 
+const authService = new AuthService();
+
 export default {
     async logIn(loginForm: LogIn): Promise<void> {
-        const response = await AuthService.logIn(loginForm)
+        const response = await authService.logIn(loginForm)
         console.log('response login', response)
         if (response.success) {
             mutations.setAuth(true, response.data);
@@ -27,7 +29,7 @@ export default {
     },
 
     async register(registerForm: Register): Promise<void> {
-        const response = await AuthService.register(registerForm)
+        const response = await authService.register(registerForm)
         console.log('response register', response)
         if (!response.success) {
             const toast: Toast = {

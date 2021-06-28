@@ -31,4 +31,8 @@ export class AxiosService<T, U> {
 
 }
 
-export const axiosSingleton = new AxiosService()
+export const axiosSingleton = function <T, U>()  {
+    return new AxiosService<T, U>()
+}
+
+//export const axiosSingleton = new AxiosService()
