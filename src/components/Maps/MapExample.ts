@@ -80,6 +80,7 @@ export default defineComponent({
         const locationButton = document.createElement("button");
         locationButton.textContent = "Pan to Current Location";
         locationButton.classList.add("custom-map-control-button");
+        // @ts-ignore
         map!.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
         locationButton.addEventListener("click", () => {
             // Try HTML5 geolocation.
@@ -94,21 +95,26 @@ export default defineComponent({
                         infoWindow.setPosition(pos);
                         infoWindow.setContent("Location found.");
                         infoWindow.open(map);
-                        map.setCenter(pos);
+                        // @ts-ignore
+                        map!.setCenter(pos);
                     },
                     () => {
-                        handleLocationError(true, infoWindow, map.getCenter())
+                        // @ts-ignore
+                        handleLocationError(true, infoWindow, map!.getCenter())
                     }
                 );
             } else {
                 // Browser doesn't support Geolocation
-                handleLocationError(false, infoWindow, map.getCenter())
+                // @ts-ignore
+                handleLocationError(false, infoWindow, map!.getCenter())
             }
         });
 
         function handleLocationError(
             browserHasGeolocation: boolean,
+            // @ts-ignore
             infoWindow: google.maps.InfoWindow,
+            // @ts-ignore
             pos: google.maps.LatLng
         ) {
             infoWindow.setPosition(pos);

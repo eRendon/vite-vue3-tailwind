@@ -9,7 +9,7 @@ export default defineComponent({
     'header-navbar': HeaderNavbar,
   },
   setup() {
-    const loading = computed(() => loadingStore.getters.getLoading.value);
+    const loading = computed(() => loadingStore.getters.getLoading());
     console.log('loading', loading.value);
     return {
       loading,

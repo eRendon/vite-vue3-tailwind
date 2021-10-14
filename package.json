@@ -1,6 +1,9 @@
 {
   "name": "vite-notus",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.9.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -15,28 +18,30 @@
     "@vee-validate/rules": "^4.1.20",
     "axios": "^0.21.1",
     "chart.js": "^3.5.1",
-    "firebase": "^8.3.2-2021230222248",
+    "firebase": "^8.10.0",
     "register-service-worker": "^1.7.1",
     "vee-validate": "^4.3.0",
     "vue": "^3.0.5",
     "vue-axios": "3.2.4",
     "vue-router": "^4.0.0-0",
-    "vuefire": "^3.0.0-alpha.2"
+    "vuefire": "^3.0.0-alpha.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/googlemaps": "^3.43.3",
-    "@types/node": "^14.14.37",
-    "@vitejs/plugin-vue": "^1.2.1",
+    "@types/node": "^16.10.9",
+    "@vitejs/plugin-vue": "^1.9.3",
     "@vue/compiler-sfc": "^3.0.5",
     "autoprefixer": "^10.2.5",
     "node-sass": "^5.0.0",
     "postcss": "^8.2.9",
     "sass": "^1.32.8",
     "sass-loader": "10.1.1",
-    "tailwindcss": "^2.1.2",
+    "tailwindcss": "^2.2.17",
     "tailwindcss-dark-mode": "^1.1.7",
     "typescript": "^4.1.3",
-    "vite": "^2.2.1",
-    "vue-tsc": "^0.0.15"
+    "vite": "^2.6.7",
+    "vite-plugin-compression": "^0.3.5",
+    "vue-tsc": "^0.28.3"
   }
 }
