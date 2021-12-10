@@ -22,10 +22,13 @@
     "firebase": "^8.10.0",
     "register-service-worker": "^1.7.1",
     "vee-validate": "^4.3.0",
+    "vite-plugin-pwa": "^0.11.3",
     "vue": "^3.0.5",
     "vue-axios": "3.2.4",
     "vue-router": "^4.0.0-0",
     "vuefire": "^3.0.0-alpha.2",
+    "workbox-precaching": "^6.3.0",
+    "worker-plugin": "^5.0.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {

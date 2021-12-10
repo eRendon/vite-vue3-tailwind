@@ -18,7 +18,7 @@ import './assets/scss/styles.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "@/assets/styles/tailwind.css";
 
-import './registerServiceWorker';
+import './sw';
 
 /* plugins */
 app.use(firestorePlugin);
@@ -30,3 +30,6 @@ import './plugins'
 /* mount app*/
 app.mount('#app')
 
+if (!import.meta.env.DEV) {
+    console.log = function () {}
+}
