@@ -22,7 +22,6 @@
     "node_modules",
     "test",
     "test.ts",
-    "**/*.spec.ts",
-    "**/*.worker.ts"
+    "**/*.spec.ts"
   ]
 }

@@ -3,3 +3,5 @@ node_modules
 dist-ssr
 *.local
 .src/server/firebase/config.ts
+dist
+/dist
