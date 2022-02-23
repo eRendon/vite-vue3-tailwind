@@ -2,7 +2,7 @@
   "name": "vite-notus",
   "version": "0.0.0",
   "engines": {
-    "node": "16.9.0"
+    "node": "14.0.5"
   },
   "scripts": {
     "dev": "vite",
