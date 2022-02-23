@@ -1,9 +1,6 @@
 {
   "name": "vite-notus",
   "version": "0.0.0",
-  "engines": {
-    "node": "14.0.5"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",

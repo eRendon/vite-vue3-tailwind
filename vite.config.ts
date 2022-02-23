@@ -10,37 +10,37 @@ export default defineConfig({
   },
   plugins: [
       vue(),
-    // VitePWA({
-    //   mode: 'development',
-    //   srcDir: 'src',
-    //   filename: 'sw.ts',
-    //   base: '/',
-    //   strategies: 'injectManifest',
-    //   includeAssets: ['/favicon.svg'], // <== don't remove slash, for testing purposes
-    //   manifest: {
-    //     name: 'Vue 3 Template',
-    //     short_name: 'Vue 3',
-    //     theme_color: '#ffffff',
-    //     icons: [
-    //       {
-    //         src: '/pwa-192x192.png', // <== don't remove slash, for testing purposes
-    //         sizes: '192x192',
-    //         type: 'image/png',
-    //       },
-    //       {
-    //         src: '/pwa-512x512.png', // <== don't remove slash, for testing purposes
-    //         sizes: '512x512',
-    //         type: 'image/png',
-    //       },
-    //       {
-    //         src: '/pwa-512x512.png', // <== don't remove slash, for testing purposes
-    //         sizes: '512x512',
-    //         type: 'image/png',
-    //         purpose: 'any maskable',
-    //       },
-    //     ],
-    //   },
-    // }),
+    VitePWA({
+      mode: 'development',
+      srcDir: 'src',
+      filename: 'sw.ts',
+      base: '/',
+      strategies: 'injectManifest',
+      includeAssets: ['/favicon.svg'], // <== don't remove slash, for testing purposes
+      manifest: {
+        name: 'Vue 3 Template',
+        short_name: 'Vue 3',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: '/pwa-192x192.png', // <== don't remove slash, for testing purposes
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-512x512.png', // <== don't remove slash, for testing purposes
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-512x512.png', // <== don't remove slash, for testing purposes
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
+    }),
   ],
   resolve: {
     alias: [
