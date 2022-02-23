@@ -6,7 +6,6 @@ export default defineComponent({
     setup() {
         const darkMode = ref<boolean>(false)
 
-
         const changeStateTheme = (): void => {
             if (darkMode.value ) {
                 document.documentElement.classList.add('mode-dark');
