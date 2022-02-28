@@ -1,5 +1,5 @@
 import { Item } from '@/server/models/Item';
-import firebase from 'firebase'
+import firebase from 'firebase/compat'
 import DocumentData = firebase.firestore.DocumentData
 
 const fromJsonMap = (itemDoc: DocumentData | undefined, idDocument: string): Item | undefined => {
