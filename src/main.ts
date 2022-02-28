@@ -18,7 +18,7 @@ import './assets/scss/styles.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "@/assets/styles/tailwind.css";
 
-import './sw';
+// import './sw';
 
 /* plugins */
 app.use(firestorePlugin);
