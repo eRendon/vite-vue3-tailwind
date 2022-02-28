@@ -2,7 +2,7 @@ const plugin = require("tailwindcss/plugin");
 // const colors = require("tailwindcss/colors");
 
 module.exports = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx,html}'],
+  content: [ './index.html', './src/**/*.{vue,js,ts,jsx,tsx,html}' ],
   mode: 'jit',
   darkMode: 'class', // or 'media' or 'class'
   theme: {
