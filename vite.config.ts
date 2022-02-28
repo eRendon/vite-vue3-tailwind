@@ -9,6 +9,9 @@ export default defineConfig({
   define: {
     'process.env': {}
   },
+  build: {
+    sourcemap:'inline',
+  },
   plugins: [
       vue(),
     // VitePWA({
