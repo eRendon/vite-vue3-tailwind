@@ -2,9 +2,9 @@ import loading from '../../store/modules/loading';
 import { apiClient } from './config';
 import { AxiosError, AxiosResponse } from 'axios';
 import surePromise from '../../utils/surePromise';
-import { Toast } from '@/interface/Toast';
+import { Toast } from '../../interface/Toast';
 import { notifications } from '../../store';
-import { SurePromise } from '@/interface/SurePromise';
+import { SurePromise } from "../../interface/SurePromise";
 
 export class AxiosService<T, U> {
     
@@ -12,7 +12,7 @@ export class AxiosService<T, U> {
         loading.actions.start('Cargando...')
         try {
             return await surePromise(apiClient.post<AxiosResponse>(url, postData));
-        } catch (err: any) {
+        } catch (err) {
             if (err && err.response) {
                 const axiosError = err as AxiosError
                 const toast: Toast = {

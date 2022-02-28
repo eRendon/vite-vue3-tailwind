@@ -37,7 +37,7 @@ app.mount('#app')
 //     onNeedRefresh() {},
 //     onOfflineReady() {},
 // })
-
+//
 // function handleSWManualUpdates(swRegistration: ServiceWorkerRegistration | undefined) {
 //     // noop
 // }
@@ -45,7 +45,7 @@ app.mount('#app')
 // function handleSWRegisterError(error: any) {
 //     // noop
 // }
-
+//
 // try {
 //     const updateSW = registerSW({
 //         immediate: true,

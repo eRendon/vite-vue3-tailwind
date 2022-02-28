@@ -4,12 +4,11 @@
 //
 // const manifest = self.__WB_MANIFEST
 //
-// console.log(process)
+// console.log(manifest)
 //
-// if (process.env.NODE_ENV === 'production') {
-//   precacheAndRoute(manifest)
-//   self.skipWaiting()
-// }
+// precacheAndRoute(manifest)
+//
+// self.skipWaiting()
 // clientsClaim()
 //
 // cleanupOutdatedCaches()
