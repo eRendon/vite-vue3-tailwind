@@ -1,4 +1,4 @@
-import firebase from 'firebase/compat';
+import firebase from 'firebase/app';
 import firebaseConfig from '@/server/firebase/config';
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
