@@ -1,5 +1,5 @@
-import {SurePromise} from "../interface/SurePromise";
-import {AxiosResponse} from "axios";
+import { SurePromise } from '@/interface/SurePromise';
+import { AxiosResponse } from "axios";
 
 const surePromise = <T>(promise: Promise<AxiosResponse>): Promise<SurePromise<T>> => (
     promise
@@ -11,7 +11,6 @@ const surePromise = <T>(promise: Promise<AxiosResponse>): Promise<SurePromise<T>
             }
         })
         .catch(error => {
-            console.log('surePromise', error.response)
             const { data } = error.response
             return Promise.resolve({success: false, data})
         })

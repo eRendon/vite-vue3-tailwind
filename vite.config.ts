@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
 import { VitePWA } from 'vite-plugin-pwa'
+import FullReload from 'vite-plugin-full-reload'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
     'process.env': {}
   },
   plugins: [
-      vue()
+      vue(),
     // VitePWA({
     //   mode: 'development',
     //   srcDir: 'src',
@@ -42,6 +43,7 @@ export default defineConfig({
     // }),
   ],
   resolve: {
+    extensions: ['.html', '.ts'],
     alias: [
       {
         find: '@/assets',
@@ -78,6 +80,10 @@ export default defineConfig({
       {
         find: '@/server',
         replacement: path.resolve(__dirname, './src/server')
+      },
+      {
+        find: '@/utils',
+        replacement: path.resolve(__dirname, './src/utils')
       },
       {
         find: '@/',

@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { auth } from '../../../store';
-import { LogIn } from "../../../interface/Auth";
+import { LogIn } from '@/interface/Auth';
 import { Form, Field, ErrorMessage } from 'vee-validate';
 
 export default {
@@ -31,5 +31,5 @@ export default {
       logIn,
       schema
     };
-  },
+  }
 };
