@@ -12,7 +12,8 @@ export class AxiosService<T, U> {
         loading.actions.start('Cargando...')
         try {
             return await surePromise(apiClient.post<AxiosResponse>(url, postData));
-        } catch (err) {
+        } catch (err: unknown) {
+            // @ts-ignore
             if (err && err.response) {
                 const axiosError = err as AxiosError
                 const toast: Toast = {
