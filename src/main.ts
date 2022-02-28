@@ -38,13 +38,13 @@ app.mount('#app')
 //     onOfflineReady() {},
 // })
 
-function handleSWManualUpdates(swRegistration: ServiceWorkerRegistration | undefined) {
-    // noop
-}
-
-function handleSWRegisterError(error: any) {
-    // noop
-}
+// function handleSWManualUpdates(swRegistration: ServiceWorkerRegistration | undefined) {
+//     // noop
+// }
+//
+// function handleSWRegisterError(error: any) {
+//     // noop
+// }
 
 // try {
 //     const updateSW = registerSW({
