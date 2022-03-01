@@ -12,37 +12,37 @@ export default defineConfig({
     sourcemap:'inline',
   },
   plugins: [
-      vue()
-    // VitePWA({
-    //   mode: 'development',
-    //   srcDir: 'src',
-    //   filename: 'sw.ts',
-    //   strategies: 'injectManifest',
-    //   includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
-    //   manifest: {
-    //     name: 'Vue 3 Template',
-    //     short_name: 'Vue 3',
-    //     theme_color: '#ffffff',
-    //     icons: [
-    //       {
-    //         src: '/android-chrome-192x192.png', // <== don't remove slash, for testing purposes
-    //         sizes: '192x192',
-    //         type: 'image/png',
-    //       },
-    //       {
-    //         src: '/android-chrome-512x512.png', // <== don't remove slash, for testing purposes
-    //         sizes: '512x512',
-    //         type: 'image/png',
-    //       },
-    //       {
-    //         src: '/android-chrome-512x512.png', // <== don't remove slash, for testing purposes
-    //         sizes: '512x512',
-    //         type: 'image/png',
-    //         purpose: 'any maskable',
-    //       },
-    //     ],
-    //   },
-    // }),
+      vue(),
+    VitePWA({
+      mode: 'development',
+      srcDir: 'src',
+      filename: 'sw.ts',
+      strategies: 'injectManifest',
+      includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'Vue 3 Template',
+        short_name: 'Vue 3',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: '/android-chrome-192x192.png', // <== don't remove slash, for testing purposes
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/android-chrome-512x512.png', // <== don't remove slash, for testing purposes
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/android-chrome-512x512.png', // <== don't remove slash, for testing purposes
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
+    }),
   ],
   resolve: {
     alias: [

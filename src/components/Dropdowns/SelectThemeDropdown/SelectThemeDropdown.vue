@@ -40,15 +40,18 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { setTheme } from '@/store/modules/theme'
 
 const darkMode = ref<boolean>(false)
 
 const changeStateTheme = (): void => {
   if (darkMode.value ) {
     document.documentElement.classList.add('dark');
+    setTheme('dark')
     return;
   }
   document.documentElement.classList.remove('dark');
+  setTheme('')
 }
 </script>
 
